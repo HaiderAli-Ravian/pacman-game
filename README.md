@@ -1,24 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pac-Man Game
+
+A modern implementation of the classic Pac-Man game built with Next.js and TypeScript.
+
+## Features
+
+- Classic Pac-Man gameplay mechanics
+- Four ghosts with different behaviors and personalities
+- Power pellets (energizers) that allow Pac-Man to eat ghosts
+- Score tracking and lives system
+- Responsive design with touch controls for mobile devices
+- Keyboard controls for desktop
+- Visual ghost path debugging option
+- User authentication system
+
+## Architecture
+
+The game is built using a component-based architecture with the following key components:
+
+### Core Game Logic (`src/pacman/`)
+
+- `Game.ts`: Main game controller managing game state, scoring, and ghost behavior
+- `Pacman.ts`: Handles Pac-Man movement, collision detection, and pill collection
+- `Ghost.ts`: Implements ghost AI using A\* pathfinding algorithm
+- `Board.ts`: Manages the game board layout, walls, and pills
+- `TypesAndSettings.ts`: Contains game constants and type definitions
+
+### React Components (`src/components/`)
+
+- Game board and grid components
+- Pac-Man and ghost sprites
+- Walls and pills rendering
+- Touch screen controller for mobile devices
+- UI elements (score, lives, game over screen)
+
+### Pages (`src/app/`)
+
+- Main game page with authentication
+- Game play interface
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to start playing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Controls
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Arrow keys or WASD: Move Pac-Man
+- Touch controls available on mobile devices
+- Show/Hide ghost paths for debugging
+
+## Game Rules
+
+- Collect all pills to win
+- Avoid ghosts or lose a life
+- Eat power pellets to temporarily make ghosts vulnerable
+- Game ends when all lives are lost
+
+## Technical Details
+
+- Built with Next.js 13+ (App Router)
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Framer Motion for animations
+- A\* pathfinding algorithm for ghost AI
+- Local storage for user authentication
+
+## Development
+
+The project uses modern web development practices and tools:
+
+- ESLint for code linting
+- TypeScript for type checking
+- Tailwind CSS for styling
+- Next.js for server-side rendering and routing
+
+## License
+
+This project is open source and available under the MIT License.
 
 ## Learn More
 
