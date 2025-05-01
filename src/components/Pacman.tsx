@@ -1,4 +1,4 @@
-import { DirectionsType } from "@/pacman";
+import { DirectionsType } from "@/components/pacman/index";
 import useInterval from "@/utils/useInterval";
 import React, { useState } from "react";
 import PacmanIcon from "./PacmanIcon";

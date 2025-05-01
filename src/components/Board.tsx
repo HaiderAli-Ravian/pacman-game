@@ -1,4 +1,4 @@
-import { BOARD_SIZE, FIELD_SIZE } from "@/pacman";
+import { BOARD_SIZE, FIELD_SIZE } from "@/components/pacman/index";
 import { PacmanContext } from "@/utils/Context";
 
 import React, { ReactElement, useContext } from "react";

@@ -5,9 +5,9 @@ import useKeyboardControl from "@/utils/useKeyboardControl";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-import { BOARD_SIZE, DirectionsType } from "@/pacman";
+import { BOARD_SIZE, DirectionsType } from "@/components/pacman/index";
 
-import { Game } from "@/pacman/Game";
+import { Game } from "@/components/pacman/Game";
 
 import Walls from "@/components/Walls";
 import Pills from "@/components/Pills";
@@ -24,7 +24,7 @@ import {
   SPEED_MAIN,
   SPEED_MOVING_CELL_NORMAL,
   SPEED_MOVING_CELL_SLOW,
-} from "@/pacman/TypesAndSettings";
+} from "@/components/pacman/TypesAndSettings";
 import { PacmanContext, PacmanContextType } from "@/utils/Context";
 
 let game = new Game();
