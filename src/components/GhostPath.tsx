@@ -1,4 +1,4 @@
-import { FIELD_SIZE, Position } from "@/components/pacman/TypesAndSettings";
+import { FIELD_SIZE, Position } from "@/pacman/TypesAndSettings";
 import { PacmanContext } from "@/utils/Context";
 import React, { useContext } from "react";
 
@@ -18,12 +18,8 @@ export default function GhostPath({ path, color }: Props) {
             height: FIELD_SIZE,
             left: el.x * FIELD_SIZE,
             top: el.y * FIELD_SIZE,
-          }}
-        >
-          <div
-            className="w-1/3 h-1/3 backdrop-opacity-75"
-            style={{ backgroundColor: color }}
-          ></div>
+          }}>
+          <div className="w-1/3 h-1/3 backdrop-opacity-75" style={{ backgroundColor: color }}></div>
         </div>
       ))}
     </>

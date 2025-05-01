@@ -1,5 +1,5 @@
-import { Pill } from "@/components/pacman/Pill";
-import { FIELD_SIZE, PillType } from "@/components/pacman/TypesAndSettings";
+import { Pill } from "@/pacman/Pill";
+import { FIELD_SIZE, PillType } from "@/pacman/TypesAndSettings";
 import { PacmanContext } from "@/utils/Context";
 import React, { useContext } from "react";
 
@@ -16,21 +16,13 @@ function Pills({ pills }: Props) {
         return (
           <div
             className="rounded-full bg-pink-300"
-            style={{
-              width: `${FIELD_SIZE * 0.7}px`,
-              height: `${FIELD_SIZE * 0.7}px`,
-            }}
-          ></div>
+            style={{ width: `${FIELD_SIZE * 0.7}px`, height: `${FIELD_SIZE * 0.7}px` }}></div>
         );
       case "basic":
         return (
           <div
             className="rounded-md bg-pink-300"
-            style={{
-              width: `${FIELD_SIZE * 0.2}px`,
-              height: `${FIELD_SIZE * 0.2}px`,
-            }}
-          ></div>
+            style={{ width: `${FIELD_SIZE * 0.2}px`, height: `${FIELD_SIZE * 0.2}px` }}></div>
         );
       default:
         return <div></div>;
@@ -47,8 +39,7 @@ function Pills({ pills }: Props) {
             left: pill.position.x * FIELD_SIZE,
             top: pill.position.y * FIELD_SIZE,
           }}
-          className="flex justify-center items-center absolute"
-        >
+          className="flex justify-center items-center absolute">
           {getComponentForPill(pill.pillType)}
         </div>
       ))}

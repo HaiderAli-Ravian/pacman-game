@@ -1,7 +1,7 @@
-"use client";
+'use client'
 import { createContext } from "react";
 import useWindowDimensions from "./useWindowDimensions";
-import { BOARD_SIZE } from "@/components/pacman/index";
+import { BOARD_SIZE } from "@/pacman";
 
 export interface PacmanContextType {
   windowWidth: number;
@@ -24,8 +24,7 @@ export function PacmanContextProvider({ children }: Props) {
 
   const getFieldSize = () => {
     let fieldSize;
-    if (windowWidth > windowHeight)
-      fieldSize = (windowHeight - 180) / BOARD_SIZE.y;
+    if (windowWidth > windowHeight) fieldSize = (windowHeight - 180) / BOARD_SIZE.y;
     else fieldSize = (windowWidth - 5) / BOARD_SIZE.y;
 
     if (fieldSize > 0) return fieldSize;
@@ -38,7 +37,5 @@ export function PacmanContextProvider({ children }: Props) {
     windowHeight,
   };
 
-  return (
-    <PacmanContext.Provider value={value}>{children}</PacmanContext.Provider>
-  );
+  return <PacmanContext.Provider value={value}>{children}</PacmanContext.Provider>;
 }

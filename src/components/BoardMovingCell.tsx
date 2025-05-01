@@ -1,18 +1,10 @@
 import React, { ReactNode, useContext } from "react";
 import { motion } from "framer-motion";
-import {
-  Position,
-  SPEED_MOVING_CELL_NORMAL,
-} from "@/components/pacman/TypesAndSettings";
+import { Position, SPEED_MOVING_CELL_NORMAL } from "@/pacman/TypesAndSettings";
 
-type Props = {
-  position: Position;
-  duration?: number;
-  children?: ReactNode;
-  className?: string;
-};
+type Props = { position: Position; duration?: number; children?: ReactNode; className?: string };
 
-import { FIELD_SIZE } from "@/components/pacman/TypesAndSettings";
+import { FIELD_SIZE } from "@/pacman/TypesAndSettings";
 import { PacmanContext } from "@/utils/Context";
 
 export default function BoardMovingCell({
@@ -36,8 +28,7 @@ export default function BoardMovingCell({
           left: position.x * FIELD_SIZE,
           top: position.y * FIELD_SIZE,
         } as React.CSSProperties
-      }
-    >
+      }>
       {children}
     </motion.div>
   );

@@ -1,16 +1,12 @@
 import React, { ReactNode, useContext } from "react";
-import { Position } from "@/components/pacman/TypesAndSettings";
+import { Position } from "@/pacman/TypesAndSettings";
 
 type Props = { position: Position; children?: ReactNode; className: string };
 
 //import { FIELD_SIZE } from "@/pacman/TypesAndSettings";
 import { PacmanContext } from "@/utils/Context";
 
-export default function BoardCell({
-  position,
-  children,
-  className,
-}: Props): ReactNode {
+export default function BoardCell({ position, children, className }: Props): ReactNode {
   const { fieldSize } = useContext(PacmanContext);
   const FIELD_SIZE = fieldSize;
   return (
@@ -21,8 +17,7 @@ export default function BoardCell({
         height: FIELD_SIZE,
         left: position.x * FIELD_SIZE,
         top: position.y * FIELD_SIZE,
-      }}
-    >
+      }}>
       {children}
     </div>
   );
